@@ -27,7 +27,7 @@ for item in question:
 #     code = bets["bets"][question]["code"]
 #     score = bets["bets"][question]["score"]
     game = next(i for i in bets["bets"] if i["game"] == item)
-    answer = input(f"Unesite šifru za igru: {game["game"]}\n")
+    answer = input(f"Unesite šifru za igru: {game['game']}\n")
     try:
         int(answer)
     except ValueError:
@@ -40,12 +40,12 @@ for item in question:
 
     else:
         if int(answer) == game["code"]:
-            print(f"Tačno, šifra za {game["game"]} je {game["code"]}!\n")
+            print(f"Tačno, šifra za {game['game']} je {game['code']}!\n")
             game["score"] -= 1
             correct += 1
         else:
             game["score"] += 1
-            print(f"Na žalost, to nije tačno.\nŠifra za {game["game"]} je {game["code"]}!\n")
+            print(f"Na žalost, to nije tačno.\nŠifra za {game['game']} je {game['code']}!\n")
             not_correct += 1
 
 
